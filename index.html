@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gradient Xenerator ASS</h1>
+      <div class="gradient-box"></div>
+
+      <div class="controls">
+        <label for="color1">Color 1:</label>
+        <input type="color" id="color1" value="#ff0000" />
+
+        <label for="color2">Color 2:</label>
+        <input type="color" id="color2" value="#00ff00" />
+        <label for="type">type:</label>
+
+        <select id="gradient-type">
+          <option value="linear">Linear</option>
+          <option value="radial">Radial</option>
+        </select>
+
+        <label for="direction">Direction:</label>
+        <select id="direction">
+          <option value=" right">Right</option>
+          <option value=" left">Left</option>
+          <option value=" p">top</option>
+          <option value=" botm">Bottom</option>
+          <option value=" top right">Top Right</option>
+          <option value=" top left">Top Left</option>
+          <option value=" bottom right">Bottom Right</option>
+          <option value=" bottom left">Bottom Left</option>
+        </select>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
