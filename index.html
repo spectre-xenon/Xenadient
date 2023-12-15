@@ -7,10 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-black">
-    <h1 class="text-white text-center font-bold text-3xl p-2">ASSRADIANT</h1>
-
     <div
-      class="min-h-screen flex md:flex-row flex-col justify-center gap-12 md:p-8 p-4"
+      class="gradient-box min-h-screen flex md:flex-row flex-col justify-center gap-12 md:p-8 p-4"
+      id="gradient-box"
     >
       <div
         class="flex flex-col space-y-2 gap-2 [&>*]:gap-2 [&>*]:items-center [&>*]:font-bold [&>*]:flex"
@@ -62,10 +61,6 @@
           >Go Random</a
         >
       </div>
-      <div
-        class="flex justify-center text-center gradient-box md:h-auto md:w-1/2 w-[350px] h-72 rounded-lg"
-        id="gradient-box"
-      ></div>
     </div>
     <iframe
       src="../public/team.html"
@@ -73,7 +68,76 @@
       height="500px"
       frameborder="0"
     ></iframe>
-
+    <div class="container mx-auto p-8 text-white">
+      <div class="grid gap-12 md:grid-cols-2">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold">Contact Us</h2>
+          <form class="space-y-4 font-semibold" id="contactForm">
+            <div class="space-y-2">
+              <label for="name">Name</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="email">Email</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="email"
+                placeholder="Enter your email"
+                type="email"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="subject">Subject</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="subject"
+                placeholder="Enter your subject"
+              />
+            </div>
+            <div class="space-y-2 flex flex-col">
+              <label for="message">Message</label>
+              <textarea
+                required
+                class="bg-gray-800 rounded-md p-2 w-full resize-none"
+                id="message"
+                rows="2"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold">Gymrat Contact Info</h2>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Address</h3>
+            <p>123 Fitness St, Muscle City, 90001</p>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Phone Number</h3>
+            <p>(+20) 110 219 1344</p>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Email</h3>
+            <a href="mailto:ramadanebrahim791@gmil.com" class="underline"
+              >ramadanebrahim791@gmil.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       const color1 = document.getElementById("color1");
       const color2 = document.getElementById("color2");
@@ -96,6 +160,24 @@
 
       // Initial gradient setting
       setGradient();
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const formFieldIds = ["name", "email", "subject", "message"];
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+          };
+          console.log("Form Data:", formData);
+
+          formFieldIds.forEach((fieldId) => {
+            document.getElementById(fieldId).value = "";
+          });
+        });
     </script>
   </body>
 </html>
