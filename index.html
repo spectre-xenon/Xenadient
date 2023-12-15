@@ -3,40 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <title>Gradient Generator</title>
-    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="container">
-      <h1>Gradient Xenerator ASS</h1>
-      <div class="gradient-box"></div>
+  <body class="bg-black">
+    <div
+      class="min-h-screen flex md:flex-row flex-col justify-center gap-12 p-8"
+    >
+      <div class="controls flex flex-col space-y-2">
+        <div class="flex flex-col text-white">
+          <label for="color1">Color 1</label>
+          <div class="relative items-center">
+            <input
+              type="text"
+              id="inputColor1"
+              class="flex text-black border border-gray-300 rounded-l-md p-1 focus:border-blue-500"
+            />
+            <input
+              type="color"
+              id="color1"
+              value="#ff0000"
+              class="absolute inset-y-0 right-0 text-center flex items-center pr-3"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col text-white">
+          <label for="color2">Color 2</label>
+          <div class="relative">
+            <input
+              type="text"
+              id="inputColor2"
+              class="text-black border border-gray-300 rounded-l-md p-2 focus:border-blue-500 z-10"
+            />
+            <input
+              type="color"
+              id="color2"
+              value="#00ff00"
+              class="absolute inset-y-0 right-0 text-center flex items-center pr-3"
+            />
+          </div>
+        </div>
 
-      <div class="controls">
-        <label for="color1">Color 1:</label>
-        <input type="color" id="color1" value="#ff0000" />
+        <div class="flex justify-between">
+          <label for="gradient-type" class="text-white">Type:</label>
+          <select id="gradient-type">
+            <option value="linear">Linear</option>
+            <option value="radial">Radial</option>
+          </select>
+        </div>
 
-        <label for="color2">Color 2:</label>
-        <input type="color" id="color2" value="#00ff00" />
-        <label for="type">type:</label>
-
-        <select id="gradient-type">
-          <option value="linear">Linear</option>
-          <option value="radial">Radial</option>
-        </select>
-
-        <label for="direction">Direction:</label>
-        <select id="direction">
-          <option value=" right">Right</option>
-          <option value=" left">Left</option>
-          <option value=" p">top</option>
-          <option value=" botm">Bottom</option>
-          <option value=" top right">Top Right</option>
-          <option value=" top left">Top Left</option>
-          <option value=" bottom right">Bottom Right</option>
-          <option value=" bottom left">Bottom Left</option>
-        </select>
+        <div class="flex justify-between">
+          <label for="direction" class="text-white">Direction:</label>
+          <select id="direction">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="top right">Top Right</option>
+            <option value="top left">Top Left</option>
+            <option value="bottom right">Bottom Right</option>
+            <option value="bottom left">Bottom Left</option>
+          </select>
+        </div>
       </div>
+      <div class="gradient-box w-60 h-60 rounded-lg" id="gradient-box"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+      const color1 = document.getElementById("color1");
+      const color2 = document.getElementById("color2");
+      const gradientType = document.getElementById("gradient-type");
+      const direction = document.getElementById("direction");
+      const gradientBox = document.getElementById("gradient-box");
+      /////
+      const inputColor1 = document.getElementById("inputColor1");
+      const inputColor2 = document.getElementById("inputColor2");
+
+      function validateColor(color) {
+        // validating color hex or rgb with regex (found this on internet but tested and workjing realcool) regexyoooo
+        const hexRegex = /^#(?:[0-9a-fA-F]{3}){1,2}$/;
+        const rgbRegex = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/;
+
+        return hexRegex.test(color) || rgbRegex.test(color);
+      }
+
+      function setGradient() {
+        const isValidColor1 = validateColor(inputColor1.value);
+        const isValidColor2 = validateColor(inputColor2.value);
+        if (isValidColor1 || isValidColor2) {
+          //color1.value = isValidColor1 ? inputColor1 : "";
+          //color2.value = isValidColor2 ? inputColor2 : "";
+          console.log("ass");
+          if (gradientType.value === "linear") {
+            gradientBox.style.background = `linear-gradient(to ${
+              direction.value
+            }, ${inputColor1.value || color1.value}, ${
+              inputColor2.value || color2.value
+            })`;
+          } else if (gradientType.value === "radial") {
+            gradientBox.style.background = `radial-gradient(${
+              inputColor1.value || color1.value
+            }, ${inputColor2.value || color2.value})`;
+          }
+          return;
+        }
+        if (gradientType.value === "linear") {
+          gradientBox.style.background = `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
+        } else if (gradientType.value === "radial") {
+          gradientBox.style.background = `radial-gradient(${color1.value}, ${color2.value})`;
+        }
+      }
+
+      gradientType.addEventListener("change", setGradient);
+      color1.addEventListener("input", setGradient);
+      color2.addEventListener("input", setGradient);
+      direction.addEventListener("change", setGradient); //priorities and all
+
+      inputColor1.addEventListener("input", setGradient);
+      inputColor2.addEventListener("input", setGradient);
+      // initial gradient setting
+      setGradient();
+    </script>
   </body>
 </html>
