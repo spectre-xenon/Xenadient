@@ -7,6 +7,8 @@
       href="https://fonts.googleapis.com/css?family=Quicksand:300,500&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
       rel="stylesheet"
@@ -18,8 +20,27 @@
   <body>
     <div class="container">
       <p>Click<br />ANYWHERE</p>
-      <div class="gradient-info">&nbsp;</div>
+      <div class="w-full flex text-center justify-center font-bold">
+        <div
+          class="w-fit gradient-info hover:bg-indigo-500 transition-all duration-300 p-2 rounded-lg"
+        >
+          &nbsp;
+        </div>
+      </div>
     </div>
+    <a href="/index.html" class="absolute top-2 left-2 cursor-pointer hover:bg-indigo-300 transition-all duration-200 p-2 bg-indigo-200 rounded-lg">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="16"
+        width="14"
+        viewBox="0 0 448 512"
+      >
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+        <path
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+        />
+      </svg>
+    </a href="">
     <script>
       const width = window.innerWidth;
       const p = document.querySelector("p");
