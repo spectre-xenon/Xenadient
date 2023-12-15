@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./random.css" />
+    <title>CLICK | RANDOMIZE</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <p>Click<br />ANYWHERE</p>
+      <div class="gradient-info">&nbsp;</div>
+    </div>
+    <script>
+      const width = window.innerWidth;
+      const p = document.querySelector("p");
+      const gradientInfo = document.querySelector(".gradient-info");
+
+      const styleEl = document.documentElement.style;
+      const setStyle = styleEl.setProperty.bind(styleEl);
+
+      document.addEventListener("click", (e) => {
+        // Check if the clicked element is the copiable gradientInfo or not first
+        if (e.target.classList.contains("gradient-info")) {
+          return; // stop regenerating if the user copies (makes sense)
+        }
+
+        const gradStart = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)})`;
+        const gradEnd = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)})`;
+
+        setStyle("--grad-start", gradStart);
+        setStyle("--grad-end", gradEnd);
+        gradientInfo.innerHTML = `${gradStart} | ${gradEnd}`;
+      });
+
+      //copying the gradientcolors
+      gradientInfo.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(gradientInfo.textContent)
+          .then(() => {
+            alert("Gradient info copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Unable to copy:", err);
+          });
+      });
+    </script>
+  </body>
+</html>

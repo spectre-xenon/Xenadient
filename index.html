@@ -67,6 +67,12 @@
       </div>
       <div class="gradient-box w-60 h-60 rounded-lg" id="gradient-box"></div>
     </div>
+    <iframe
+      src="../public/team.html"
+      width="100%"
+      height="500px"
+      frameborder="0"
+    ></iframe>
 
     <script>
       const color1 = document.getElementById("color1");
@@ -105,6 +111,9 @@
             }, ${inputColor2.value || color2.value})`;
           }
           return;
+        } else {
+          inputColor1.value = color1.value;
+          inputColor2.value = color2.value;
         }
         if (gradientType.value === "linear") {
           gradientBox.style.background = `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
@@ -122,6 +131,11 @@
       inputColor2.addEventListener("input", setGradient);
       // initial gradient setting
       setGradient();
+
+      const getRandomColor = () => {
+        const randomHex = Math.floor(Math.random() * 0xffffff).toString(16);
+        return `#${randomHex}`;
+      };
     </script>
   </body>
 </html>
