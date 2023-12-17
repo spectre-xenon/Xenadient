@@ -1,2 +1,1 @@
-# Xenadient
-Awesome Gradient Generator!
+# uni-basic-ass

@@ -33,6 +33,7 @@
       class="goback absolute top-2 left-2 cursor-pointer hover:bg-indigo-300 transition-all duration-200 p-2 bg-indigo-200 rounded-lg"
     >
       <svg
+        class="goback"
         xmlns="http://www.w3.org/2000/svg"
         height="16"
         width="14"
@@ -66,10 +67,16 @@
           Math.random() * 256
         )}, ${Math.floor(Math.random() * 256)})`;
 
-        const gobackbg = `rgb(${Math.floor(Math.random() * 200)}, ${Math.floor(
-          Math.random() * 200
-        )}, ${Math.floor(Math.random() * 200)})`;
+        const gobackbg = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)})`;
+        const gobacktext = `rgb(${Math.floor(
+          Math.random() * 100
+        )}, ${Math.floor(Math.random() * 100)}, ${Math.floor(
+          Math.random() * 100
+        )})`;
         goback.style.background = gobackbg;
+        goback.style.fill = gobacktext;
 
         setStyle("--grad-start", gradStart);
         setStyle("--grad-end", gradEnd);
