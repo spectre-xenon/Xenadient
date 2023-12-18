@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Xradient || Gradient Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black bg-[url('../public/routines-bg.webp')]">
+    <p class="text-4xl font-bold text-center text-white">Xenerator</p>
+    <div
+      class="gradient-box flex md:flex-row flex-col justify-center gap-8 md:p-8 mb-8"
+    >
+      <div
+        class="flex flex-col space-y-2 gap-2 [&>*]:gap-2 [&>*]:items-center [&>*]:justify-center [&>*]:font-bold [&>*]:flex md:bg-transparent p-2"
+      >
+        <div class="flex-row text-white">
+          <input type="color" id="color1" value="#ff0000" class="rounded-md" />
+          <input type="color" id="color2" value="#00ff00" class="rounded-md" />
+        </div>
+
+        <div class="">
+          <label for="gradient-type" class="text-white">Type:</label>
+          <select id="gradient-type" class="rounded-md p-1">
+            <option value="linear">Linear</option>
+            <option value="radial">Radial</option>
+          </select>
+        </div>
+
+        <div class="">
+          <label for="direction" class="text-white">Direction:</label>
+          <select id="direction" class="rounded-md p-1">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="top right">Top Right</option>
+            <option value="top left">Top Left</option>
+            <option value="bottom right">Bottom Right</option>
+            <option value="bottom left">Bottom Left</option>
+          </select>
+        </div>
+        <div
+          id="copy-btn"
+          class="text-black cursor-pointer flex justify-center p-2 bg-indigo-200 rounded-full hover:bg-indigo-300"
+        >
+          Copy
+        </div>
+        <a href="/random.html" class="text-white underline flex justify-center"
+          >Go Random</a
+        >
+      </div>
+      <div
+        class="flex text-center rounded-lg h-72 md:w-72 w-full z-10 cursor-pointer"
+        id="gradient-box"
+      ></div>
+    </div>
+
+    <section
+      class="h-fit text-white bg-gradient-to-r from-cyan-200 to-blue-100 py-4"
+    >
+      <div class="flex flex-col justify-center px-4 md:px-8 gap-4 h-fit">
+        <!-- item card -->
+        <div class="flex flex-col md:flex-row shadow-lg mx-6 md:mx-auto mt-2">
+          <img
+            class="h-full w-full md:w-1/3 object-cover rounded-lg rounded-r-none pb-5/6"
+            src="../public/play.gif"
+            alt="bag"
+          />
+          <div
+            class="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg flex flex-col justify-between"
+          >
+            <div class="flex flex-col w-full items-center">
+              <div class="flex flex-row w-full justify-between items-center">
+                <h2 class="text-xl text-gray-800 font-medium">
+                  CSS Gradient Generator
+                </h2>
+                <p class="text-gray-800 font-semibold tracking-tighter">
+                  tailwind+js
+                </p>
+              </div>
+              <p class="text-sm text-gray-700 mt-4">
+                Lorem, ipsum dolor sit amet consectetur
+              </p>
+            </div>
+
+            <div class="flex justify-end mt-4">
+              <a
+                target="_blank"
+                href="https://github.com/Ebrahim-Ramadan"
+                class="bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2"
+                >Visit</a
+              >
+              <a
+                target="_blank"
+                href="https://github.com/spectre-xenon/Xenadient"
+                class="bg-blue-600 hover:opacity-90 flex flex-row items-center gap-2 px-2 py-2 rounded-md"
+                >Star
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="16"
+                  fill="white"
+                  width="18"
+                  viewBox="0 0 576 512"
+                >
+                  <path
+                    d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- dev card -->
+        <div class="w-full flex justify-center">
+          <a
+            class="flex gap-2 bg-gradient-to-r px-4 from-sky-500 to-indigo-500 p-2 rounded-full items-center hover:opacity-90"
+            href="https://github.com/Ebrahim-Ramadan"
+            target="_blank"
+          >
+            <div class="w-24 h-24">
+              <img
+                src="../public/tw.webp"
+                class="w-full h-full rounded-full border border-2 border-slate-200"
+                alt=""
+              />
+            </div>
+            <div>
+              <h4 class="font-semibold sm:text-lg">Ebrahim Ramadan</h4>
+              <p class="text-indigo-100">web dev</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div
+      class="container bg-[url('../public/routines-bg.webp')] mx-auto p-8 text-white"
+    >
+      <div class="grid gap-12 md:grid-cols-2">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold">Contact Us</h2>
+          <form class="space-y-4 font-semibold" id="contactForm">
+            <div class="space-y-2">
+              <label for="name">Name</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="email">Email</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="email"
+                placeholder="Enter your email"
+                type="email"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="subject">Subject</label>
+              <input
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="subject"
+                placeholder="Enter your subject"
+              />
+            </div>
+            <div class="space-y-2 flex flex-col">
+              <label for="message">Message</label>
+              <textarea
+                required
+                class="bg-gray-800 rounded-md p-2 w-full"
+                id="message"
+                rows="2"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold">Xradiant Contact Info</h2>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Address</h3>
+            <p>123 Fitness St, Muscle City, 90001</p>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Phone Number</h3>
+            <p>(+20) 110 219 1344</p>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Email</h3>
+            <a href="mailto:ramadanebrahim791@gmil.com" class="underline"
+              >ramadanebrahim791@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const color1 = document.getElementById("color1");
+      const color2 = document.getElementById("color2");
+      const gradientType = document.getElementById("gradient-type");
+      const direction = document.getElementById("direction");
+      const gradientBox = document.getElementById("gradient-box");
+
+      function setGradient() {
+        if (gradientType.value === "linear") {
+          gradientBox.style.background = `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
+        } else if (gradientType.value === "radial") {
+          gradientBox.style.background = `radial-gradient(${color1.value}, ${color2.value})`;
+        }
+      }
+
+      gradientType.addEventListener("change", setGradient);
+      color1.addEventListener("input", setGradient);
+      color2.addEventListener("input", setGradient);
+      direction.addEventListener("change", setGradient);
+
+      // Initial gradient setting
+      setGradient();
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const formFieldIds = ["name", "email", "subject", "message"];
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+          };
+          console.log("Form Data:", formData);
+
+          formFieldIds.forEach((fieldId) => {
+            document.getElementById(fieldId).value = "";
+          });
+        });
+
+      const copy = document.getElementById("copy-btn");
+
+      //copying the gradientcolors
+      const copyfunc = () => {
+        navigator.clipboard
+          .writeText(gradientBox.style.background)
+          .then(() => {
+            alert("Gradient info copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Unable to copy:", err);
+          });
+      };
+      copy.addEventListener("click", copyfunc);
+      gradientBox.addEventListener("click", copyfunc);
+    </script>
+  </body>
+</html>

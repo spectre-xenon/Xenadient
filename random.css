@@ -1,0 +1,42 @@
+:root {
+  --font-title: clamp(4vw, 9vh, 6rem); /* responsivenesss shit */
+  --grad-start: #830483;
+  --grad-end: #ffcf67;
+  --min-font-size: 20px; 
+  --max-font-size: 40px;
+}
+
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  user-select: none;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0; 
+  font-size: 16px; 
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+}
+.container {
+  text-align: center;
+  padding: 20px;
+}
+p {
+  position: relative;
+  padding: 5px 10px;
+  font-size: clamp(var(--min-font-size), 5vw, var(--max-font-size));
+  text-align: center; 
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0; 
+}
+
+.gradient-info {
+  z-index: 1000;
+  text-align: center;
+  margin-top: 10px; 
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Quicksand', sans-serif;
+  font-size: clamp(15px, 2vw, 10px);
+  cursor: pointer;
+}
